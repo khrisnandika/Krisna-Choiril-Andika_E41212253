@@ -8,7 +8,7 @@
 </head>
 <body>
     <div class="modal-body">
-        <form action="/ubahData" method="post">
+        <form action="/ubahData/{{ $data->id }}" method="post">
             @csrf
             <div class="form-group">
                 <label for="" class="col-form-label">Nama</label>
@@ -16,15 +16,15 @@
             </div>
             <div class="form-group">
                 <label for="" class="col-form-label">Alamat</label>
-                <textarea class="form-control" id="" name="alamat" value="{{ $data->alamat }}"></textarea>
+                <textarea class="form-control" id="" name="alamat" value"">{{ $data->alamat }}</textarea>
             </div>
             <div class="form-group">
                 <label for="" class="col-form-label">Nomer Rekening</label>
-                <textarea class="form-control" id="" name="nomer_rekening" value="{{ $data->nomer_rekening }}"></textarea>
+                <textarea class="form-control" id="" name="nomer_rekening" value="">{{ $data->nomer_rekening }}</textarea>
             </div>
             <div class="form-group">
                 <label for="" class="col-form-label">Nomer Telpon</label>
-                <textarea class="form-control" id="" name="nomer_telpon" value="{{ $data->nomer_telpon }}"></textarea>
+                <textarea class="form-control" id="" name="nomer_telpon" value="">{{ $data->nomer_telpon }}</textarea>
                 <button type="submit" class="btn btn-primary">Ubah</button>
             </div>
         </form>

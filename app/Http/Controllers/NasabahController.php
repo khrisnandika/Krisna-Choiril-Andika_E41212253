@@ -34,7 +34,7 @@ class NasabahController extends Controller
     public function ubahData(Request $request, $id){
         $data = Nasabah::find($id);
         $data -> update($request->all());
-        return redirect()->route('read_data');
+        return redirect()->route('home');
     }
     
     
