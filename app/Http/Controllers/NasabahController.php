@@ -13,5 +13,13 @@ class NasabahController extends Controller
         Nasabah::create($request->all());
         return redirect()->route('home');
     }
+
+    //fungsi hapus data
+    public function hapusData($id){
+        $data = Nasabah::find($id);
+        $data -> delete();
+        return redirect()->route('home');
+    }
+    
     
 }

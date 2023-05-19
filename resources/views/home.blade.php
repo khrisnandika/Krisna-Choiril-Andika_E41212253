@@ -89,43 +89,32 @@
 						<table class="table">
 						  <thead class="thead-primary">
 						    <tr>
-						      <th>#</th>
-						      <th>First Name</th>
-						      <th>Last Name</th>
-						      <th>Email Address</th>
+						      <th>No</th>
+						      <th>Nama Nasabah</th>
+						      <th>Alamat</th>
+						      <th>Nomer Rekening</th>
+						      <th>Nomer Telpon</th>
+						      <th>Aksi</th>
 						    </tr>
 						  </thead>
+                          @php
+                              $no = 1;
+                          @endphp
 						  <tbody>
-						    <tr>
-						      <th scope="row">1</th>
-						      <td>Mark</td>
-						      <td>Otto</td>
-						      <td>markotto@email.com</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">2</th>
-						      <td>Jacob</td>
-						      <td>Thornton</td>
-						      <td>jacobthornton@email.com</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">3</th>
-						      <td>Larry</td>
-						      <td>the Bird</td>
-						      <td>larrybird@email.com</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">4</th>
-						      <td>John</td>
-						      <td>Doe</td>
-						      <td>johndoe@email.com</td>
-						    </tr>
-						    <tr>
-						      <th scope="row">5</th>
-						      <td>Gary</td>
-						      <td>Bird</td>
-						      <td>garybird@email.com</td>
-						    </tr>
+                            @foreach ($item as $data)
+                                <tr>
+                                    <td>{{ $no++ }}</td>
+                                    <td>{{ $data -> nama }}</td>
+                                    <td>{{ $data -> alamat }}</td>
+                                    <td>{{ $data -> nomer_rekening }}</td>
+                                    <td>{{ $data -> nomer_telpon }}</td>
+                                    <td>
+                                        <button> <a href="/updateDataView/{{ $data->id }}">ubah</a></button>
+                                        <button> <a href="/hapusData/{{ $data->id }}">hapus</a></button>
+                                    </td>
+                                </tr>
+                            @endforeach
+						    
 						  </tbody>
 						</table>
 					</div>

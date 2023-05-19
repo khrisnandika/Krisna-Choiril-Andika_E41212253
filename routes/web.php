@@ -25,3 +25,7 @@ Auth::routes();
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::post('tambahNasabah', [NasabahController::class, 'tambahNasabah'])->name('tambahNasabah');
+
+
+//route untuk delete data berdasarkan id
+Route::get('hapusData/{id}', [NasabahController::class, 'hapusData'])->name('hapusData');
