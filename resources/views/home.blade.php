@@ -109,7 +109,7 @@
                                     <td>{{ $data -> nomer_rekening }}</td>
                                     <td>{{ $data -> nomer_telpon }}</td>
                                     <td>
-                                        <button> <a href="/updateDataView/{{ $data->id }}">ubah</a></button>
+                                        <button> <a href="/tampilUbahData/{{ $data->id }}">ubah</a></button>
                                         <button> <a href="/hapusData/{{ $data->id }}">hapus</a></button>
                                     </td>
                                 </tr>
@@ -120,6 +120,8 @@
 					</div>
 				</div>
 			</div>
+
+            
 		</div>
 	</section>
 

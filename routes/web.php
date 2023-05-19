@@ -22,10 +22,18 @@ Route::get('/', function () {
 
 Auth::routes();
 
+//route tampil frontend
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('ubahdata', [NasabahController::class, 'tampilUbah'])->name('ubahdata');
 
+//route tambah data
 Route::post('tambahNasabah', [NasabahController::class, 'tambahNasabah'])->name('tambahNasabah');
 
+//route tampil data yang mau diupdate berdasarkan id
+Route::get('tampilUbahData/{id}', [NasabahController::class, 'tampilUbahData'])->name('tampilUbahData');
 
 //route untuk delete data berdasarkan id
 Route::get('hapusData/{id}', [NasabahController::class, 'hapusData'])->name('hapusData');
+
+//route update data berdasarkan id
+Route::post('ubahData/{id}', [NasabahController::class, 'ubahData'])->name('ubahData');
